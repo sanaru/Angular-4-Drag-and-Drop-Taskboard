@@ -4,7 +4,6 @@ import { MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatLis
   MatSliderModule,
   MatSlideToggleModule } from '@angular/material';
 import { DragAndDropModule } from 'angular-draggable-droppable';
-import { DragulaModule } from 'ng2-dragula';
 import { FlexLayoutModule, BREAKPOINT } from '@angular/flex-layout';
 
 const PRINT_BREAKPOINTS = [{
@@ -15,10 +14,10 @@ const PRINT_BREAKPOINTS = [{
 }];
 
 @NgModule({
-  imports: [MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatListModule, MatGridListModule, DragAndDropModule, DragulaModule, MatSidenavModule,
+  imports: [MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatListModule, MatGridListModule, DragAndDropModule, MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule, FlexLayoutModule],
-  exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatListModule, MatGridListModule, DragAndDropModule, DragulaModule, MatSidenavModule,
+  exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatListModule, MatGridListModule, DragAndDropModule, MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule, FlexLayoutModule],
 })
