@@ -1,0 +1,220 @@
+<mat-toolbar color="primary" class="main-header mat-toolbar mat-toolbar-single-row">
+  	<mat-toolbar-row>
+	    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()" color="primary">
+	      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+	    </button>
+	    <div class="branding">
+			<img src="assets/images/layers.png" class="wh-20" />
+			<span class="head2">NODE</span>
+		</div>
+		<div class="search-bar" fxShow fxHide.xs="true" style="flex: 1 1 0%; box-sizing: border-box;">
+			<form class="search-form ng-untouched ng-pristine ng-valid" novalidate="" style="">
+				<mat-icon class="mat-icon" role="img" svgicon="search-icon" >
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+				</mat-icon>
+				<input placeholder="What are you looking for?" type="text">
+			</form>
+		</div>
+		<button mat-icon-button="" matTooltip="Switch accounts" class="mat-icon-button" aria-describedby="cdk-describedby-message-1" cdk-describedby-host="">
+			<span class="mat-button-wrapper">
+				<mat-icon class="mat-icon material-icons" role="img" >compare_arrows</mat-icon>
+			</span>
+			<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div>
+		</button>
+		<button aria-haspopup="true" class="ml-xs mat-icon-button" mat-icon-button="" matTooltip="Apps quick launch"aria-describedby="cdk-describedby-message-2" cdk-describedby-host="" [matMenuTriggerFor]="settingMenu">
+			<span class="mat-button-wrapper">
+				<mat-icon class="mat-icon material-icons" role="img" >apps</mat-icon>
+			</span>
+			<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div>
+		</button>
+		<mat-menu #settingMenu="matMenu">
+		  	<div class="mat-menu-content">
+		  		<div class="pa-xs" fxlayout="row"
+		  			style="flex-direction: row; box-sizing: border-box; display: flex;">
+		  			<div class="text-xs-center pa-1" fxflex="33.3333" 
+		  				style="flex: 1 1 100%; box-sizing: border-box; max-width: 33.3333%;">
+		  				<a class="block" href="/messages">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-default mat-icon material-icons" role="img" aria-hidden="true">email</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Emails</small>
+		  				</a>
+		  				<a class="mt-2 block" href="/calendar">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-muted mat-icon material-icons" role="img" aria-hidden="true">date_range</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Calendar</small>
+		  				</a>
+		  			</div>
+		  			<div class="text-xs-center pa-1" fxflex="33.3333" style="flex: 1 1 100%; box-sizing: border-box; max-width: 33.3333%;">
+		  				<a class="block" href="/social">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-warn mat-icon material-icons" role="img" aria-hidden="true">person</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Social</small>
+		  				</a>
+		  				<a class="mt-2 block" href="/maps/google">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-default mat-icon material-icons" role="img" aria-hidden="true">place</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Map</small>
+		  				</a>
+		  			</div>
+		  			<div class="text-xs-center pa-1" fxflex="33.3333" style="flex: 1 1 100%; box-sizing: border-box; max-width: 33.3333%;">
+		  				<a class="block" href="/messsages">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-accent mat-icon material-icons" role="img" aria-hidden="true">ondemand_video</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Media</small>
+		  				</a>
+		  				<a class="mt-2 block" href="/taskboard">
+		  					<span class="block">
+		  						<mat-icon class="h1 mat-text-primary mat-icon material-icons" role="img" aria-hidden="true">view_column</mat-icon>
+		  					</span>
+		  					<small class="text-muted">Tasks</small>
+		  				</a>
+		  			</div>
+		  		</div>
+		  	</div>
+		</mat-menu>
+		<button aria-haspopup="true" class="ml-xs overflow-visible mat-icon-button" mat-icon-button="" matTooltip="User notifications" aria-describedby="cdk-describedby-message-3" cdk-describedby-host="" [matMenuTriggerFor]="notifiationMenu">
+			<span class="mat-button-wrapper">
+				<mat-icon class="mat-icon material-icons" role="img" >notifications</mat-icon>
+			</span>
+			<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div>
+		</button>
+		<mat-menu #notifiationMenu="matMenu" class="custom">
+		  	<div class="mat-menu-content">
+		  		<mat-toolbar class="mat-toolbar mat-toolbar-single-row">
+		  			<span class="mr-1 ml-1">Notifications</span>
+		  		</mat-toolbar>
+		  		<div class="notifications-inner ps ps--active-y">
+		  			<mat-nav-list class="mat-nav-list" role="navigation">
+		  				<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+		  					<div class="mat-list-item-content">
+		  						<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+		  						<mat-icon class="mat-text-primary mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">people</mat-icon>
+		  						<div class="mat-list-text">
+		  							<h4 class="mat-line" matline="">Social</h4>
+		  							<p class="mat-line ng-star-inserted" matline="">Ligula Purus Adipiscing</p>
+		  						</div>
+		  					</div>
+		  				</mat-list-item>
+		  				<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+		  					<div class="mat-list-item-content">
+		  						<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+		  						<mat-icon class="mat-text-warn mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">local_offer</mat-icon>
+		  						<div class="mat-list-text">
+		  							<h4 class="mat-line" matline="">Promotions</h4>
+		  							<p class="mat-line ng-star-inserted" matline="">Etiam Ligula Dapibus</p>
+		  						</div>
+		  					</div>
+		  				</mat-list-item>
+		  				<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+		  					<div class="mat-list-item-content">
+		  						<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+		  						<mat-icon class="mat-text-accent mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">info</mat-icon>
+		  						<div class="mat-list-text">
+		  							<h4 class="mat-line" matline="">Updates</h4>
+		  							<p class="mat-line ng-star-inserted" matline="">Sollicitudin Euismod Fringilla</p>
+		  						</div>
+		  					</div>
+		  				</mat-list-item>
+		  				<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+		  					<div class="mat-list-item-content">
+		  						<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+		  						<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">delete_sweep</mat-icon>
+		  						<div class="mat-list-text">
+		  							<h4 class="mat-line" matline="">Removed 6 items from task list</h4>
+		  							<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Tuesday, March 24, 2015</span>
+		  						</div>
+		  					</div>
+		  				</mat-list-item>
+		  				<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+		  					<div class="mat-list-item-content">
+		  						<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+	  							<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">check_circle</mat-icon>
+	  							<div class="mat-list-text"><h4 class="mat-line" matline="">Completed 2 projects</h4>
+	  								<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Friday, March 27, 2015</span>
+	  							</div>
+	  						</div>
+	  					</mat-list-item>
+	  					<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+	  						<div class="mat-list-item-content">
+	  							<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+	  							<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">notifications_paused</mat-icon>
+	  							<div class="mat-list-text">
+	  								<h4 class="mat-line" matline="">Muted notifications</h4>
+	  								<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Saturday, March 28, 2015</span>
+	  							</div>
+	  						</div>
+	  					</mat-list-item>
+	  					<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+	  						<div class="mat-list-item-content">
+	  							<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+	  							<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">person_add</mat-icon>
+	  							<div class="mat-list-text">
+	  								<h4 class="mat-line" matline="">Added Joel to contact list</h4>
+	  								<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Monday, April 6, 2015</span>
+	  							</div>
+	  						</div>
+	  					</mat-list-item>
+	  					<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+	  						<div class="mat-list-item-content">
+	  							<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+	  							<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">phone_missed</mat-icon>
+	  							<div class="mat-list-text">
+	  								<h4 class="mat-line" matline="">Missed live call from Ellie</h4>
+	  								<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Sunday, April 12, 2015</span>
+	  							</div>
+	  						</div>
+	  					</mat-list-item>
+	  					<mat-list-item class="mat-list-item mat-2-line mat-list-item-avatar mat-list-item-with-avatar ng-star-inserted">
+	  						<div class="mat-list-item-content">
+	  							<div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+	  							<mat-icon class="mat-text- mat-icon mat-list-avatar material-icons" mat-list-avatar="" role="img" aria-hidden="true">group_add</mat-icon>
+	  							<div class="mat-list-text">
+	  								<h4 class="mat-line" matline="">You've been added to HR group</h4>
+	  								<span class="text-md mat-text-muted mat-line ng-star-inserted" matline="">Saturday, April 18, 2015</span>
+	  							</div>
+	  						</div>
+	  					</mat-list-item>
+	  				</mat-nav-list>
+	  			</div>
+	  		</div>
+		</mat-menu>
+		<button aria-haspopup="true" class="ml-xs header-avatar mat-icon-button" mat-icon-button="" mattooltip="User links" mattooltipposition="before" mattooltipshowdelay="300" aria-describedby="cdk-describedby-message-4" cdk-describedby-host="" [matMenuTriggerFor]="userMenu">
+			<span class="mat-button-wrapper">
+				<img alt="" class="toolbar-avatar radius-circle" src="assets/images/user.jpeg">
+			</span>
+			<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+			<div class="mat-button-focus-overlay"></div>
+		</button>
+		<mat-menu #userMenu="matMenu">
+		  	<div class="mat-menu-content">
+		  		<button class="mat-menu-item" mat-menu-item="" role="menuitem" tabindex="0" >
+		  			<mat-icon class="mat-icon material-icons" role="img" >settings</mat-icon> Settings
+		  			<div class="mat-menu-ripple mat-ripple" matripple=""></div>
+		  		</button><button class="mat-menu-item" mat-menu-item="" role="menuitem" tabindex="0" >
+		  			<mat-icon class="mat-icon material-icons" role="img" >account_box</mat-icon> Profile
+		  			<div class="mat-menu-ripple mat-ripple" matripple=""></div>
+		  		</button>
+	  			<button class="mat-menu-item" mat-menu-item="" role="menuitem" tabindex="0" >
+	  				<mat-icon class="mat-icon material-icons" role="img" >notifications_off</mat-icon> Disable notifications
+	  				<div class="mat-menu-ripple mat-ripple" matripple=""></div>
+	  			</button>
+	  			<button class="mat-menu-item" mat-menu-item="" role="menuitem" tabindex="0" ><mat-icon class="mat-icon material-icons" role="img" >exit_to_app</mat-icon> Sign Out
+	  				<div class="mat-menu-ripple mat-ripple" matripple=""></div>
+	  			</button>
+	  		</div>
+		</mat-menu>
+  	</mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  	<mat-sidenav #sidenav mode="push" role="navigation">
+	    <app-sidebar></app-sidebar>
+  	</mat-sidenav>
+  	<mat-sidenav-content>
+	  	<app-taskboard></app-taskboard>
+  	</mat-sidenav-content>
+</mat-sidenav-container>

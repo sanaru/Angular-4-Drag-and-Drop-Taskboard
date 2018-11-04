@@ -1,0 +1,28 @@
+.taskboard-wrapper{height:100%;padding-top: 1rem;padding-right: .5rem;padding-left: .5rem;box-sizing: border-box;display: inline-block;vertical-align: top;/*height: 100%;*/ width: 100%;}
+.taskboard-list {box-sizing: border-box;display: flex;flex-direction: column;max-height: fit-content;white-space: normal;background-color: rgba(0,0,0,.05);border-radius: 2px;}
+.taskboard-cards{position: relative;
+    margin: 0 .5rem .5rem;
+    box-sizing: border-box;
+    background: #fff; padding: 1rem;
+}
+.taskboard-header {position: relative;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: .02rem;
+    padding: .5rem;
+    margin: 0;    font-weight: 600;}
+.mat-grid-tile {overflow: visible;    height: 100%;
+        padding: 0px !important;}
+.mat-grid-list {
+    display: block;
+    position: relative;
+    padding: 0px !important;
+}
+.mat-grid-tile .mat-figure {display: block !important;}
+.ribbon {position: absolute;top: 0px;right: 10px;}
+
+@media screen(max-width:768px){
+    ::ng-deep .mat-grid-tile .mat-figure {
+        position: inherit !important;
+    }
+}
