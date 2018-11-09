@@ -1,103 +1,3 @@
-<!-- <mat-grid-list [cols]="breakpoint"  (window:resize)="onResize($event)">
-  	<mat-grid-tile>
-  		<div class="taskboard-wrapper">
-  			<div class="taskboard-list">
-	  			<div class="text-uppercase taskboard-header">
-  					BACKLOG
-	  			</div>
-	  			<div class="taskboard-cards" id="backLog-{{i}}" *ngFor="let col of backLog;let i = index" (drop)="drop($event)"
-      			(dragover)="allowDrop($event)" draggable="true"
-      			(dragstart)="drag($event, col)" >
-	  				<div class="" >
-	  					<img *ngIf="col.image;" src="assets/images/small-ribbon-red.png" class="ribbon" />
-	  					<div>{{col.heading}}</div>
-	  					<small>{{col.text}}</small>
-	  				</div>
-	  			</div>
-	  		</div>
-  		</div>
-  	</mat-grid-tile>
-  	<mat-grid-tile>
-  		<div class="taskboard-wrapper">
-  			<div class="taskboard-list" >
-	  			<div class="text-uppercase taskboard-header">
-  					To Do
-	  			</div>
-	  			<div >
-		  			<div class="taskboard-cards" (drop)="drop($event)" id="toDo-{{i}}"
-	  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, list)" *ngFor="let list of toDo;let i = index" >
-		  				<div class="">
-		  					<img *ngIf="list.image;" src="assets/images/small-ribbon.png" class="ribbon" />
-		  					<div>{{list.heading}}</div>
-		  					<small>{{list.text}}</small>
-		  				</div>
-		  			</div>
-		  		</div>
-	  		</div>
-  		</div>
-  	</mat-grid-tile>
-  	<mat-grid-tile>
-  		<div class="taskboard-wrapper">
-  			<div class="taskboard-list" >
-	  			<div class="text-uppercase taskboard-header">
-  					In Process
-	  			</div>
-	  			<div >
-		  			<div (drop)="drop($event)" class="taskboard-cards" id="inProcess-{{i}}"
-	  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, pro)"
-	  					*ngFor="let pro of inProcess;let i = index" >
-		  				<div class="">
-		  					<img *ngIf="pro.image;" src="assets/images/small-ribbon-green.png" class="ribbon" />
-		  					<div>{{pro.heading}}</div>
-		  					<small>{{pro.text}}</small>
-		  				</div>
-		  			</div>
-		  		</div>
-	  		</div>
-  		</div>
-  	</mat-grid-tile>
-  	<mat-grid-tile>
-  		<div class="taskboard-wrapper">
-  			<div class="taskboard-list" >
-	  			<div class="text-uppercase taskboard-header">
-  					Processed
-	  			</div>
-	  			<div >
-		  			<div (drop)="drop($event)" class="taskboard-cards" id="processed-{{i}}"
-	  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, process)"
-	  					*ngFor="let process of processed;let i = index" >
-		  				<div class="">
-		  					<img *ngIf="process.image;" src="assets/images/small-ribbon-yellow.png" class="ribbon" />
-		  					<div>{{process.heading}}</div>
-		  					<small>{{process.text}}</small>
-		  				</div>
-		  			</div>
-		  		</div>
-	  		</div>
-  		</div>
-  	</mat-grid-tile>
-  	<mat-grid-tile>
-  		<div class="taskboard-wrapper">
-  			<div class="taskboard-list" >
-	  			<div class="text-uppercase taskboard-header">
-  					Processed
-	  			</div>
-	  			<div >
-		  			<div (drop)="drop($event)" class="taskboard-cards" id="completed-{{i}}"
-	  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, list)"
-	  					*ngFor="let list of completed;let i = index" >
-		  				<div class="">
-		  					<img *ngIf="list.image;" src="assets/images/small-ribbon-purple.png" class="ribbon" />
-		  					<div>{{list.heading}}</div>
-		  					<small>{{list.text}}</small>
-		  				</div>
-		  			</div>
-		  		</div>
-	  		</div>
-  		</div>
-  	</mat-grid-tile>
-</mat-grid-list> -->
-
 <div class="bounds">
   	<div class="content"
            fxLayout="row"
@@ -113,7 +13,7 @@
 	      			(dragover)="allowDrop($event)" draggable="true"
 	      			(dragstart)="drag($event, col)" >
 		  				<div class="" >
-		  					<img *ngIf="col.image;" src="assets/images/small-ribbon-red.png" class="ribbon" />
+		  					<img *ngIf="col.image !== undefined"  [src]="col.image" class="ribbon" />
 		  					<div>{{col.heading}}</div>
 		  					<small>{{col.text}}</small>
 		  				</div>
@@ -131,7 +31,7 @@
 			  			<div class="taskboard-cards" (drop)="drop($event)" id="toDo-{{i}}"
 		  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, list)" *ngFor="let list of toDo;let i = index" >
 			  				<div class="">
-			  					<img *ngIf="list.image;" src="assets/images/small-ribbon.png" class="ribbon" />
+			  					<img *ngIf="list.image !== undefined"  [src]="list.image" class="ribbon" />
 			  					<div>{{list.heading}}</div>
 			  					<small>{{list.text}}</small>
 			  				</div>
@@ -151,7 +51,7 @@
 		  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, pro)"
 		  					*ngFor="let pro of inProcess;let i = index" >
 			  				<div class="">
-			  					<img *ngIf="pro.image;" src="assets/images/small-ribbon-green.png" class="ribbon" />
+			  					<img *ngIf="pro.image !== undefined"  [src]="pro.image"  class="ribbon" />
 			  					<div>{{pro.heading}}</div>
 			  					<small>{{pro.text}}</small>
 			  				</div>
@@ -171,7 +71,7 @@
 		  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, process)"
 		  					*ngFor="let process of processed;let i = index" >
 			  				<div class="">
-			  					<img *ngIf="process.image;" src="assets/images/small-ribbon-yellow.png" class="ribbon" />
+			  					<img *ngIf="process.image !== undefined"  [src]="process.image" class="ribbon" />
 			  					<div>{{process.heading}}</div>
 			  					<small>{{process.text}}</small>
 			  				</div>
@@ -188,10 +88,10 @@
 		  			</div>
 		  			<div >
 			  			<div (drop)="drop($event)" class="taskboard-cards" id="completed-{{i}}"
-		  					(dragover)="allowDrop($event)" draggable="true" (dragstart)="drag($event, list)"
+		  					(dragover)="allowDrop($event)" draggable="false" (dragstart)="drag($event, list)"
 		  					*ngFor="let list of completed;let i = index" >
 			  				<div class="">
-			  					<img *ngIf="list.image;" src="assets/images/small-ribbon-purple.png" class="ribbon" />
+			  					<img *ngIf="list.image !== undefined"  [src]="list.image" class="ribbon" />
 			  					<div>{{list.heading}}</div>
 			  					<small>{{list.text}}</small>
 			  				</div>

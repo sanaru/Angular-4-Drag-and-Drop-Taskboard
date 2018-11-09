@@ -1,4 +1,7 @@
 import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
+import { Data } from '../data';
+import { DataService } from '../data.service';
+
 
 @Component({
   	selector: 'app-taskboard',
@@ -9,50 +12,24 @@ import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
 export class TaskboardComponent implements OnInit {
   	ngVersion: string = VERSION.full;
   	matVersion: string = '5.1.0';
-  	// breakpoint: number;
+    backLog: Data[];
+    toDo: Data[];
+    inProcess: Data[];
+    processed: Data[];
+    completed: Data[];
 
-    backLog: { id: number, heading: string, text:string, image:boolean }[] = [
-        {id: 1, heading: 'Travel ', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 2, heading: 'Budget ', text: 'Curabitur blandit tempus porttitor.', image:true},
-        {id: 3, heading: 'Responsive ', text: 'Curabitur blandit tempus porttitor.', image:false}
-    ];
+    textToUpdate: { id: number, heading: string, text:string, image:string } = { id : undefined, heading: undefined, text: undefined, image:undefined};
 
-    toDo: { id: number, heading: string, text:string, image:boolean }[] = [
-        {id: 1, heading: 'Travel Budget2', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 2, heading: 'Budget Final2', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 3, heading: 'Responsive Design2', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 4, heading: 'Travel Budget2', text: 'Curabitur blandit tempus porttitor.', image:true},
-        {id: 5, heading: 'Budget Final2', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 6, heading: 'Responsive Design2', text: 'Curabitur blandit tempus porttitor.', image:false},
-    ];
-
-    inProcess: { id: number, heading: string, text:string, image:boolean }[] = [
-        {id: 1, heading: 'Travel Process ', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 2, heading: 'Budget Process', text: 'Curabitur blandit tempus porttitor.', image:true},
-        {id: 3, heading: 'Responsive Process', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 4, heading: 'Budget Process', text: 'Curabitur blandit tempus porttitor.', image:true},
-    ];
-
-    processed: { id: number, heading: string, text:string, image:boolean }[] = [
-        {id: 1, heading: 'Travel Process ', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 2, heading: 'Budget Process', text: 'Curabitur blandit tempus porttitor.', image:false},
-        {id: 3, heading: 'Responsive Process', text: 'Curabitur blandit tempus porttitor.', image:true}
-    ];
-
-    completed: { id: number, heading: string, text:string, image:boolean }[] = [
-        {id: 1, heading: 'Travel Process ', text: 'Curabitur blandit tempus porttitor.',image:false},
-        {id: 2, heading: 'Budget Process', text: 'Curabitur blandit tempus porttitor.',image:true},
-        {id: 3, heading: 'Responsive Process', text: 'Curabitur blandit tempus porttitor.',image:false},
-        {id: 4, heading: 'Responsive Process', text: 'Curabitur blandit tempus porttitor.',image:false}
-    ];
-
-    textToUpdate: { id: number, heading: string, text:string, image:boolean } = { id : undefined, heading: undefined, text: undefined, image:false};
-
-  	constructor() {
+  	constructor(private dataService:DataService) {
     }
 
-  	ngOnInit() {
-  	}
+    ngOnInit(): void {
+        this.backLog = this.dataService.backLog;
+        this.toDo = this.dataService.toDo;
+        this.inProcess = this.dataService.inProcess;
+        this.processed = this.dataService.processed;
+        this.completed = this.dataService.completed;
+    }
 
     drop(ev) {
         ev.preventDefault();
